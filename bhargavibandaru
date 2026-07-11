@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Evolution Timeline | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 600px;
+        }
+
+        header h1 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Timeline Container */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Main Vertical Line */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--card-bg);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        /* Timeline Items */
+        .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        /* Dots on the line */
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: var(--bg-color);
+            border: 4px solid var(--accent-color);
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left { left: 0; }
+        .right { left: 50%; }
+
+        .right::after { left: -8px; }
+
+        /* Content Cards */
+        .content {
+            padding: 20px 30px;
+            background-color: var(--card-bg);
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .right .content {
+            border-left: none;
+            border-right: 4px solid var(--accent-color);
+        }
+
+        .date {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .content h3 {
+            margin: 5px 0;
+        }
+
+        .content p {
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 10px 0 0 0;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 600px) {
+            .timeline::after { left: 31px; }
+            .container { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .container::after { left: 23px; }
+            .left::after, .right::after { left: 23px; }
+            .right { left: 0%; }
+            .content { border-right: none !important; border-left: 4px solid var(--accent-color) !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>The Evolution of Artificial Intelligence</h1>
+        <p>A curated professional timeline mapping key algorithmic milestones and paradigm shifts in machine learning.</p>
+    </header>
+
+    <div class="timeline">
+        
+        <!-- Milestone 1 -->
+        <div class="container left">
+            <div class="content">
+                <div class="date">1950s - 1980s</div>
+                <h3>Foundations & Symbolic AI</h3>
+                <p>Early exploration focused on symbolic logic, rule-based expert systems, and the initial concepts of neural pathways.</p>
+            </div>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="container right">
+            <div class="content">
+                <div class="date">2012</div>
+                <h3>The Deep Learning Boom</h3>
+                <p>AlexNet wins the ImageNet competition, proving the power of Convolutional Neural Networks (CNNs) scaled with GPUs.</p>
+            </div>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="container left">
+            <div class="content">
+                <div class="date">2017</div>
+                <h3>The Transformer Paradigm</h3>
+                <p>Introduction of the "Attention Is All You Need" architecture, completely revolutionizing Natural Language Processing.</p>
+            </div>
+        </div>
+
+        <!-- Milestone 4 -->
+        <div class="container right">
+            <div class="content">
+                <div class="date">Present Day</div>
+                <h3>Generative AI & Agents</h3>
+                <p>The scaling of Foundational LLMs and multimodal systems transitioning into highly autonomous agentic workflows.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
